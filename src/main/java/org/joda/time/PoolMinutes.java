@@ -4,13 +4,13 @@ import java.util.HashMap;
 
 public class PoolMinutes extends GenericPool<Minutes> {
 
-    private static Pool myInstance;
+    private static PoolMinutes myInstance;
 
     public PoolMinutes() {
         this.elements = new HashMap<Integer, Minutes>();
     }
 
-    public static Pool getInstance() {
+    public static PoolMinutes getInstance() {
         if (myInstance == null) {
             myInstance = new PoolMinutes();
         }

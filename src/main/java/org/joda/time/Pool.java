@@ -2,29 +2,32 @@ package org.joda.time;
 
 public abstract class Pool {
 
-    public static Days retrieveDays(int numeral) {
-        Pool pool = CreatePool(1);
-        return (Days)pool.getElement(numeral);
+    public static Years retrieveYears(int numeral) {
+        return PoolYears.getInstance().getElement(numeral);
     }
 
+    public static Months retrieveMonths(int numeral) {
+        return PoolMonths.getInstance().getElement(numeral);
+    }
+
+    public static Weeks retrieveWeeks(int numeral) {
+        return PoolWeeks.getInstance().getElement(numeral);
+    }
+
+    public static Days retrieveDays(int numeral) {
+        return PoolDays.getInstance().getElement(numeral);
+    }
+
+    public static Hours retrieveHours(int numeral) {
+        return PoolHours.getInstance().getElement(numeral);
+    }
 
     public static Minutes retrieveMinutes(int numeral) {
-        Pool pool = CreatePool(2);
-        return (Minutes)pool.getElement(numeral);
+        return PoolMinutes.getInstance().getElement(numeral);
     }
 
-    public abstract Object getElement(int numeral);
-
-    private static Pool CreatePool(int type)
-    {
-        switch (type) {
-            case 1:
-                return PoolDays.getInstance();
-            case 2:
-                return PoolMinutes.getInstance();
-            default:
-                return null;
-        }
+    public static Seconds retrieveSeconds(int numeral) {
+        return PoolSeconds.getInstance().getElement(numeral);
     }
 }
 

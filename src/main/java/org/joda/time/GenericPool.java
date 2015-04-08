@@ -2,13 +2,13 @@ package org.joda.time;
 
 import java.util.HashMap;
 
-public abstract class GenericPool<T> extends Pool
+public abstract class GenericPool<T>
 {
     protected HashMap<Integer, T> elements;
 
     protected abstract T createElement(int numeral);
 
-    @Override
+
     public T getElement(int numeral){
         T result = elements.get(new Integer(numeral));
 
